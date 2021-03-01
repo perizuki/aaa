@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>BLACK&WHITE GENERATOR</title>
+<meta charset="UTF-8">
+<meta property="og:type" content="website">
+<meta content="#f3b2c8" property="theme-color">
+<meta content="BLACK&WHITE GENERATOR" property="og:title">
+<meta name="keywords" content="black, white, black&white, color, generator, image"/>
+<link rel="shortcut icon" href="igor.ico"/>
+<link rel="stylesheet" href="igor.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+<script src="img1.js" type="text/javascript"></script> 
+<script src="img2.js" type="text/javascript"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pica/5.0.0/pica.js" type="text/javascript"></script> 
+<span class=languages style="display:block !important;">
+    <a href="fr/index.html" data-reload>FR</a> &middot
+    <a href="index.html" data-reload>ENG</a>
+</span>
+</head>
+<body>
+
+<div id=1>
+<div id="title" class="stylized">
+    <h1>Upload ur image and the website convert the image in black and white.</h1>
+</div>
+
+<input type="file"
+  id="igorpic" name="igorpic" class="igorpic"
+    accept="image/png, image/jpeg">
+        <img src="" id="igorpic-tag" height="400px"/>
+         <script type="text/javascript">
+            function readURL(input) {
+             if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                $('#igorpic-tag').attr('src', e.target.result);
+                }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#igorpic").change(function(){
+        readURL(this);
+    });
+</script>
+
+<script type="text/javascript">
+$("input:file").change(function (){
+    if ($('input[type=file]').get(0).files.length > 0) {
+        if($(this).val() == '') {
+            $('#confirm').hide();
+        }
+        else {
+            $('#confirm').show();
+        }
+    }
+    });
+</script>
+
+<button id="confirm"
+type="button" onclick="upload()">
+Keep this image and let's go
+</button>
+<script>$('#confirm').on('click',function(){
+        if($('#1').css('display')!='none'){
+        $('#2').html($('#static').html()).show().siblings('div').hide();
+        }else if($('#2').css('display')!='none'){
+            $('#1').show().siblings('div').hide();
+        }
+    });
+</script>
+</div>
+
+<div id=2 style="display:none;">
+
+<button id="confirm2"
+type="button" onclick="makeGray();addGrain()">
+Done
+</button>
+<script>$('#confirm2').on('click',function(){
+    if($('#2').css('display')!='none'){
+    $('#3').html($('#static').html()).show().siblings('div').hide();
+    }else if($('#3').css('display')!='none'){
+        $('#2').show().siblings('div').hide();
+    }
+});
+</script>
+</div>
+
+<div id=3 style="display:none;">
+<p class=tada id=start>Here's your image.</p>
+<canvas id="effect"></canvas>
+<canvas id="can"></canvas>
+<canvas id="bg"></canvas>
+<button id="confirm3"
+<a class="download-button-4 flat-button-1 green fp17 bold marginTop12 inlineblock" onclick="if(b_gaIsLoaded===1){f_ga_tev('event', 'ACTION-ProcessedFile', 'fileDownload', 'page: ' + document.location.pathname + document.location.search, 1);}" target="_blank" href id="can"><span class="icon-dl-24-inv"></span>Télécharger l'image</a>
+
+</body>
+</html>
